@@ -29,7 +29,11 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+# Authentication
+gem 'devise'
+# Admin & Theme
+gem 'rails_admin', '~> 1.2'
+gem 'rails_admin_rollincode', '~> 1.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
