@@ -17,7 +17,7 @@ class CheckCondition
     end
 
     def valid_conditions
-        Condition.all.order(:created_at) #validate stock
+        Condition.joins(:prize).where("prizes.amount > 0").order(:created_at)
     end
 
     def matched_conditions_prizes(conditions, subscription)
