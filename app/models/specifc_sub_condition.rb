@@ -1,0 +1,2 @@
+class SpecifcSubCondition < Condition
+end

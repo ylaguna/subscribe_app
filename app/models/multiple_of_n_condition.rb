@@ -1,0 +1,2 @@
+class MultipleOfNCondition < Condition
+end
