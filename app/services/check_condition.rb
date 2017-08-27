@@ -17,7 +17,7 @@ class CheckCondition
     end
 
     def valid_conditions
-        SpecifcSubCondition.all.order(:created_at) #todo: get all, maybe STI ?
+        Condition.all.order(:created_at) #validate stock
     end
 
     def matched_conditions_prizes(conditions, subscription)
