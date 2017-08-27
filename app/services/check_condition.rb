@@ -4,7 +4,7 @@ class CheckCondition
     include Singleton
 
     def won?(subscription)
-        @stacked_prizes << matched_conditions_prizes(valid_conditions, subscription)
+        @stacked_prizes.concat matched_conditions_prizes(valid_conditions, subscription)
         @stacked_prizes.shift #todo: validate this guy
     end
 
