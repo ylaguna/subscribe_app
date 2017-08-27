@@ -31,8 +31,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 # Authentication
 gem 'devise'
-# Admin
+# Admin & Theme
 gem 'rails_admin', '~> 1.2'
+gem 'rails_admin_rollincode', '~> 1.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
