@@ -17,7 +17,7 @@ class SubscribeService
             
             else
                 ret[:status] = :notice
-                ret[:message] = "Gotcha! You winned a prize"
+                ret[:message] = "Gotcha! You winned a prize, see your email for more information!"
             
             end
             

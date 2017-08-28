@@ -1,4 +1,5 @@
 class SubscriberController < ApplicationController
+  before_action { flash.clear }
   
   def index
   end
