@@ -22,20 +22,45 @@ RailsAdmin.config do |config|
   ## == Gravatar integration ==
   ## To disable Gravatar integration in Navigation Bar set to false
   # config.show_gravatar = true
+  config.excluded_models.concat [Admin, Condition, Subscription]
 
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory
     new
     #export
-    bulk_delete
-    show
+    #bulk_delete
+    # show
     edit
     delete
-    show_in_app
+    #show_in_app
 
     ## With an audit adapter, you can add:
     # history_index
     # history_show
+  end
+
+  config.model 'SpecifcSubCondition' do
+    create do
+      field :value
+      field :prize
+    end
+
+    edit do
+      field :value
+      field :prize
+    end
+  end
+
+  config.model 'MultipleOfNCondition' do
+    create do
+      field :value
+      field :prize
+    end
+
+    edit do
+      field :value
+      field :prize
+    end
   end
 end
