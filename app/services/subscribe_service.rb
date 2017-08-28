@@ -11,12 +11,19 @@ class SubscribeService
             
             ret = { }
             
-            ret[:email] = email
-            ret[:message] = prize.nil? ? "Não foi dessa vez" : "Você ganhou!"
+            if prize.nil?
+                ret[:status] = :info
+                ret[:message] = "Nope! Try again tommorow? ;)"
+            
+            else
+                ret[:status] = :notice
+                ret[:message] = "Gotcha! You winned a prize"
+            
+            end
             
             ret
         rescue => exception
-            { error_message: exception.message}
+            { status: :error, message: exception.message}
         end
     end
 end

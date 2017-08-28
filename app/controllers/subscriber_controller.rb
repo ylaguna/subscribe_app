@@ -5,6 +5,10 @@ class SubscriberController < ApplicationController
 
   def subscribe
     email = params[:subscription][:email]
-    render :json => SubscribeService.instance.subscribe(email)
+
+    response = SubscribeService.instance.subscribe(email)
+    flash[response[:status]] = response[:message]
+
+    render :action => :index
   end
 end
