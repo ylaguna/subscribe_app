@@ -1,29 +1,15 @@
 require 'singleton'
 
 class SubscribeService
-    include Singleton
+  include Singleton
 
-    def subscribe(email)
-        begin
-            subscription = Subscription.create!(email: email)
-            
-            prize = CheckCondition.instance.won?(subscription)
-            
-            ret = { }
-            
-            if prize.nil?
-                ret[:status] = :info
-                ret[:message] = "Nope! Try again tommorow? ;)"
-            
-            else
-                ret[:status] = :notice
-                ret[:message] = "Gotcha! You winned a prize, see your email for more information!"
-            
-            end
-            
-            ret
-        rescue => exception
-            { status: :error, message: exception.message}
-        end
-    end
+  def subscribe(email)
+    subscription = Subscription.create!(email: email)
+
+    prize = CheckCondition.instance.won?(subscription)
+
+    prize.nil? ? Message.failed_message : Message.success_message
+  rescue => exception
+    Message.error_message(exception.message)
+  end
 end

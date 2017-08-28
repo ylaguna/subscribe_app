@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  root to: "subscriber#index"
+  root to: 'subscriber#index'
 
-  get 'subscribe' => "subscriber#index" 
-  post 'subscribe' => "subscriber#subscribe" 
+  get 'subscribe' => 'subscriber#index'
+  post 'subscribe' => 'subscriber#subscribe'
 
   devise_for :admin
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'

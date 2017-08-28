@@ -13,7 +13,6 @@ class ChangeConditionToSti < ActiveRecord::Migration[5.1]
   end
 
   def down
-
     create_table :specifc_sub_conditions do |t|
       t.integer :subscriber
       t.belongs_to :prize
@@ -27,7 +26,7 @@ class ChangeConditionToSti < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
-    
+
     drop_table :conditions
   end
 end
