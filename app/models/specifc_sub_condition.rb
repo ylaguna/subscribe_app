@@ -1,5 +1,5 @@
 class SpecifcSubCondition < Condition
-    def matched?(subscriber)
-        subscriber.id == self.value
-    end
+  def matched?(subscriber)
+    subscriber.id == value
+  end
 end
