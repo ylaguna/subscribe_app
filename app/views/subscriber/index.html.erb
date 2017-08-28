@@ -1,0 +1,25 @@
+<div class="container text-left" style="width:900px;margin:0 auto;">  
+
+  <div style="background-color: #000030; color: white; border-radius: 8px 8px 0px 0px; height: 50px;">
+    <h3 style="padding: 10px;"> Subscribe for prizes! </h3>
+  </div>
+
+  <div id="box-body" style="padding: 20px">
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam suscipit, neque gravida eleifend congue, nulla lacus tempor tortor, quis commodo elit nisi sed metus. Sed molestie hendrerit vulputate. Integer venenatis ex vitae turpis porttitor sodales. Integer tempus viverra tortor. Quisque a massa et dolor laoreet consectetur. Cras ornare rhoncus ultricies. Nunc a tempor augue. Pellentesque eget elit diam.
+  </p>
+  
+  <%= form_for :subscription, url: subscribe_path, method: :post do |f| %>
+          
+      <div class="form-group">
+        <%= f.label :email %><br />
+        <%= f.text_field :email, type:"email", class:"form-control", required: "required", placeholder: "email@email.com" %>
+      </div>
+      
+      <%= f.submit "Subscribe!" %>
+  
+  <% end %>
+  </div>
+</div>
+
+<%= javascript_include_tag( 'subscription_page' ) %>
